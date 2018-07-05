@@ -22,128 +22,210 @@
 </head>
 
 <body>
-  <!-- HEADER -->
-  <div class='container'>
+  <!-- HEADER/INTRO -->
+  <div class="container">
     <h1>SURVEY QUESTIONS</h1>
-    <h3>Answer the following questions to get matched with your mightest friend</h3>
+    <hr>
   </div>
 
   <div class="container">
-    <!-- SURVEY QUESTION FORMS -->
-    <form>
-      <div class="row">
-        <div class="twelve columns">
-          <label for="name">What's your name?</label>
-          <input class="u-full-width" type="text" id="name">
-
-          <label for="image">Put a link here to a photo or drawing of yourself.</label>
-          <input class="u-full-width" type="text" id="image">
-
-          <label for="q1">
-            1 - I like to do things by the book.
-          </label>
-          <select class="u-half-width" id="q1">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q2">2 - I am extremely determined.</label>
-          <select class="u-half-width" id="q2">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q3">3 - If I suspect someone close to me has betrayed me I would confront them.</label>
-          <select class="u-half-width" id="q3">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q4">4 - I am the life of the party.</label>
-          <select class="u-half-width" id="q4">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q5">5 - I have a strong sense of duty.</label>
-          <select class="u-half-width" id="q5">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q6">6 - I try to reason with my enemies before resorting to force.</label>
-          <select class="u-half-width" id="q6">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q7">7 - I like to use my abilities to help those who can’t help themselves.</label>
-          <select class="u-half-width" id="q7">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q8">8 - I am analytical and logical.</label>
-          <select class="u-half-width" id="q8">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q9">9 - When I’m sick I suck it up and go to work and hope I feel better by lunchtime.</label>
-          <select class="u-half-width" id="q9">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <label for="q10">10 - I am insanely competitive and am practically married to my job.</label>
-          <select class="u-half-width" id="q10">
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2 (Somewhat Disagree)</option>
-            <option value="3">3 (Neutral)</option>
-            <option value="4">4 (Somewhat Agree)</option>
-            <option value="5">5 (Strongly Agree)</option>
-          </select>
-
-          <div class="twelve columns">
-            <br>
-            <!-- FORM BUTTON -->
-            <input class="button-primary" type="submit" id="submit">
-          </div>
-
-    </form>
+    <!-- NAME AND PHOTO PANEL/FORM-->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <strong>First, Tell us your name!</strong>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <h4>Your Full Name</h4>
+        <div class="input-group">
+          <input id="formName" class="form-control" type="text" name="name" placeholder="John Smith">
+          <span class="input-group-addon">Required</span>
+        </div>
+        <br>
+        <h4>Link to a Photo Image</h4>
+        <div class="input-group">
+          <input id="formImage" class="form-control" type="text" name="name" placeholder="http://yourphotolink.com/img01.jpg/">
+          <span class="input-group-addon">Required</span>
+        </div>
+      </div>
     </div>
 
+    <!-- SURVEY QUESTION FORM -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <strong>Answer the following questions to get matched with your mightest friend</strong>
+        </h3>
+      </div>
+
+      <div class="panel-body">
+
+        <!-- Q1 -->
+        <h4>
+          <strong>Question 1</strong>
+        </h4>
+        <h5>I like to do things by the book.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q1">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q2 -->
+        <h4>
+          <strong>Question 2</strong>
+        </h4>
+        <h5>I am extremely determined.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q2">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q3 -->
+        <h4>
+          <strong>Question 3</strong>
+        </h4>
+        <h5>If I suspect someone close to me has betrayed me I would confront them.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q3">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q4 -->
+        <h4>
+          <strong>Question 4</strong>
+        </h4>
+        <h5>I am the life of the party.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q4">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q5 -->
+        <h4>
+          <strong>Question 5</strong>
+        </h4>
+        <h5>I have a strong sense of duty.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q5">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q6 -->
+        <h4>
+          <strong>Question 6</strong>
+        </h4>
+        <h5>I try to reason with my enemies before resorting to force.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q6">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q7 -->
+        <h4>
+          <strong>Question 7</strong>
+        </h4>
+        <h5>I like to use my abilities to help those who can’t help themselves.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q7">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q8 -->
+        <h4>
+          <strong>Question 8</strong>
+        </h4>
+        <h5>I am analytical and logical.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q8">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q9 -->
+        <h4>
+          <strong>Question 9</strong>
+        </h4>
+        <h5>When I’m sick I suck it up and go to work and hope I feel better by lunchtime.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q9">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <!-- Q10 -->
+        <h4>
+          <strong>Question 10</strong>
+        </h4>
+        <h5>I am insanely competitive and am practically married to my job.</h5>
+        <select data-placeholder="" class="chosen-select" id="Q10">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+      </div>
     </div>
+    <!-- Quiz Submit Button -->
+    <button id="submit" type="submit" class="btn btn-md btn-info btn-block">
+      <h4>
+        Submit</h4>
+    </button>
+
+    <br>
+
+    <!-- API & GITHUB LINKS -->
+    <footer class="footer">
+      <p>
+        <a href="/api/friends">API Friends List</a> |
+        <a href="https://github.com/jenncuenca/FriendFinder" target="_blank">GitHub Repo</a>
+      </p>
+
+    </footer>
   </div>
 
-  <!-- END OF QUESTIONS -->
+  </div>
+
+  </div>
+
+
 
   <!-- Modal -->
   <div id="resultsModal" class="modal fade" role="dialog">

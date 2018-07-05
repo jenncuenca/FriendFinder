@@ -2,7 +2,7 @@
 var path = require('path');
 
 // === CONFIRM ROUTE CONNECTION ===//
-console.log("//=== HTML ROUTE SUCCESSFUL ===//")
+console.log("// HTML ROUTE SUCCESSFUL ...")
 
 // === ROUTING === //
 module.exports = function (app) {

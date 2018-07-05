@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 //=== CONFIRM ROUTE CONNECTION === //
-console.log("//=== API ROUTE SUCCESSFUL ===//")
+console.log("// API ROUTE SUCCESSFUL...")
 
 //Required API Data
 var friends = require('../data/friends.js');
