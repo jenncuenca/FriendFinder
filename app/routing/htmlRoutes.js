@@ -1,8 +1,12 @@
 // === DEPENDENCIES === //
 var path = require('path');
 
+// === CONFIRM ROUTE CONNECTION ===//
+console.log("//=== HTML ROUTE SUCCESSFUL ===//")
+
 // === ROUTING === //
 module.exports = function (app) {
+	
 	// HTML GET Requests that handles when users "visit" a page.
 
 	app.get('/survey', function (req, res) {
