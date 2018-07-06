@@ -11,54 +11,60 @@ var friends = require('../data/friends.js');
 // === ROUTING === //
 module.exports = function apiRoute(app) {
     // get request for API
-    app.get("/api/friends", function (req, res) {
+    app.get("/data/friends", function (req, res) {
         res.json(friends);
     });
 
-    //post request for form submissions
-    app.post('/api/friends', function (req, res) {
+    //FORM SUBMISSION REQUEST
+    app.post('/data/friends', function (req, res) {
 
-        var match = {
-            name: '',
-            photo: '',
-            friendDifference: 1000
-        };
+var newFriend = {
+    name: req.body.name,
+    photo: req.body.photo,
+    scores: []
+  };
+  var scores = [];
 
-        //survery results parsed
+  // ****** GETTING ERROR "TypeError: Cannot read property 'length' of undefined" **** //
+  for(var i=0; i < req.body.scores.length; i++){
+    scores.push( parseInt(req.body.scores[i]) )
+  }
+  newFriend.scores = scores;
 
-        var userData = req.body;
-        var userScore = userData.scores;
+  // CROSS REF NEW FRIEND WITH EXISTING ONES
+  var scoreComparisionArray = [];
+  for(var i=0; i < friends.length; i++){
 
-        // var for calculation of difference in user scores
-        var totalDiff = 0;
+    // CHECK SCORES AND ADD UP DIFFERENCE IN POINTS
+    var currentComparison = 0;
+    for(var j=0; j < newFriend.scores.length; j++){
+      currentComparison += Math.abs( newFriend.scores[j] - friends[i].scores[j] );
+    }
 
-        //loop through all friend possibilities
+    // PUSH COMPARISON TO ARRAY
+    scoreComparisionArray.push(currentComparison);
+  }
 
-        for (var i = 0; i < friends.length; i++) {
-            console.log(friends[i].name);
-            totalDiff = 0;
-        }
+  // DETERMINE BEST MATCH
+  var bestMatchPosition = 0;
+  for(var i=1; i < scoreComparisionArray.length; i++){
+    
+    if(scoreComparisionArray[i] <= scoreComparisionArray[bestMatchPosition]){
+      bestMatchPosition = i;
+    }
 
-        //loop through all friend scores
+  }
 
-        for (var f = 0; f < friends[i].scores[f]; f++) {
+  // IF 2 HAVE SAME RESULTS CHOOSE NEWEST FRIEND DATA ENTRY
+  var bestFriendMatch = friends[bestMatchPosition];
 
-            totalDiff += Math.abs(parseInt(userScore[f]) - parseInt(friends[i].scores[f]));
+  // BEST MATCH RESULT
+  res.json(bestFriendMatch);
 
-            //to determine best match
+  // ADD NEW FRONT TO FRIEND'S DATA ARRAY
+  friends.push(newFriend);
 
-            if (totalDiff <= match.friendDifference) {
-                match.name = friends[i].name;
-                match.photo = friends[i].photo;
-                match.friendDifference = totalDiff;
-            }
-        }
+});
 
-        //save to data
-        friends.push(userData);
-
-        res.json(match);
-
-    });
 
 };
